@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Search from "../search/Search.js";
 import Movies from "../movies/Movies";
+import axios from 'axios'
+
 
 class App extends Component {
   state = {
@@ -9,6 +11,7 @@ class App extends Component {
     searchValue: "",
   };
 
+/* 
   async componentDidMount() {
     const movie_URL = "http://localhost:3004/movies_list";
     const res = await fetch(movie_URL);
@@ -17,10 +20,25 @@ class App extends Component {
     this.setState({
       movies_list: data
     });
+  }*/
+
+
+  async componentDidMount() {
+
+        const result = await axios("http://localhost:3004/movies_list")
+        this.setState({
+            movies_list : result.data
+        })
+
   }
 
+
+
   // DELETE ITEM
-  deleteMovie = (movie) => {
+  deleteMovie = async  (movie) => {
+
+    axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
+    console.log("deleted...")
     const new_movies_list = this.state.movies_list.filter(
       (mv) => mv.id !== movie.id
     );
