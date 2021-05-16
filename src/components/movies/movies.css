@@ -1,0 +1,23 @@
+.imageCss-container {
+
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(19rem,3fr));
+    grid-row-gap:5px;
+    grid-column-gap:5px;
+
+  
+    
+}
+
+.imageCss-container img {
+   
+    border:3px solid #adb5bd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+}
+
+.imageCss-container img:hover {
+    transform: scale(1.1);
+    
+}
