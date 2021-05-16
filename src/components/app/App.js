@@ -33,15 +33,21 @@ class App extends Component {
                 "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
                 "imageUrl":"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AjTtJNumZyUDz33VtMlF1K8JPsE.jpg"
         
-            },
-        
-        
-        
-        
-        
+            },       
         ] 
     }
 
+
+    deleteMovie = (movie) => {
+
+        const new_movies_list = this.state.movies_list.filter(mv => 
+                mv.id !== movie.id
+            )
+
+        this.setState({
+            movies_list : new_movies_list 
+        })    
+    }
 
 
     render() {
@@ -54,7 +60,11 @@ class App extends Component {
                     </div>
                </div>
 
-               <Movies movies_list = {this.state.movies_list}  />
+               <Movies 
+                movies_list = {this.state.movies_list} 
+                plsDeleteMovie={this.deleteMovie}  // PROPS HALİNE GETİRİYORUZ, PARENT'TAKİ FUNCTIONU.
+
+               />
                
            </div>
         )
