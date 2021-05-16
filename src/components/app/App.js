@@ -34,7 +34,9 @@ class App extends Component {
                 "imageUrl":"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AjTtJNumZyUDz33VtMlF1K8JPsE.jpg"
         
             },       
-        ] 
+        ] ,
+
+        searchValue: ""
     }
 
 //______________________________________ DELETE ITEM _______________________________
@@ -42,30 +44,54 @@ class App extends Component {
         const new_movies_list = this.state.movies_list.filter(mv => 
                 mv.id !== movie.id
             )   
-         this.setState( state=> ({  //Var olan statı güncelliyoruz burda, Yani önceki durumun üzerinden işlem yapıyoruz.
+         this.setState( state=> ({  //Var olan state'yi güncelliyoruz burda, Yani önceki durumun üzerinden işlem yapıyoruz.
              movies_list : new_movies_list
           })) 
 
     }
+//____________________________________ SEARCH MOVIE __________________________________ (Eventi Parent'ta YAKALADIK, Childe PROPS OLARAK YOlluyoruz)
+    searchMovies = (e) => {
+            this.setState({
+                searchValue : e.target.value // state de  için boş olan searchValue'yi, EVENTIN targetinden gelen value'sini state'deki boş olan searchValue'ye aktarıyoruz. 
+            })
+    }
+
 
 
     render() {
+
+        let filterMovies = this.state.movies_list.filter((movie) => {
+
+            return movie.name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1 || 
+             movie.overview.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1 
+               
+            
+           
+           
+        })
+
+
+
         return(
            <div className="container">
                <div className="row">
                     <div className="col-md-12">
-                        <Search />
+                        <Search searchMovie={this.searchMovies}   />
                     </div>
                </div>
 
                <Movies 
-                movies_list = {this.state.movies_list} 
+                movies_list = {filterMovies} 
                 plsDeleteMovie={this.deleteMovie}  // PROPS HALİNE GETİRİYORUZ, PARENT'TAKİ FUNCTIONU.
 
                />
                
            </div>
         )
+
+
+
+
     }
 
 }
