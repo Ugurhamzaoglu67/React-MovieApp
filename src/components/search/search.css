@@ -1,10 +1,18 @@
 
 
-nav form .myinp {
+form .myinp {
    
-    width:91% !important;
-    margin-left:10px !important;
+    width:95% !important;
+    margin-left:5px !important;
 }
 
 
 
+form .searchSign {
+    background-color:#FFD43B;
+    outline:none;
+    border:none;
+    border-radius: 0 8px 8px 0;
+    color:black;
+
+}

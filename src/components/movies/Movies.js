@@ -4,7 +4,6 @@ import React from "react";
 const Movies = (props) => {
 
 
-
     return (
       <div className="row">
         {props.movies_list.map((movie) => (

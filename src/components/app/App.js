@@ -37,16 +37,15 @@ class App extends Component {
         ] 
     }
 
-
+//______________________________________ DELETE ITEM _______________________________
     deleteMovie = (movie) => {
-
         const new_movies_list = this.state.movies_list.filter(mv => 
                 mv.id !== movie.id
-            )
+            )   
+         this.setState( state=> ({  //Var olan statı güncelliyoruz burda, Yani önceki durumun üzerinden işlem yapıyoruz.
+             movies_list : new_movies_list
+          })) 
 
-        this.setState({
-            movies_list : new_movies_list 
-        })    
     }
 
 
@@ -56,7 +55,6 @@ class App extends Component {
                <div className="row">
                     <div className="col-md-12">
                         <Search />
-                       
                     </div>
                </div>
 
