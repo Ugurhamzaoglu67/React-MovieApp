@@ -54,7 +54,8 @@ class App extends Component {
                     </div>
                </div>
 
-               <Movies />
+               <Movies movies_list = {this.state.movies_list}  />
+               
            </div>
         )
     }
