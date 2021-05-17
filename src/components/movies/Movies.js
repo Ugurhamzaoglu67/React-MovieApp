@@ -6,10 +6,6 @@ const Movies = (props) => {
 
     return (
 
-     
-
-
-
       <div className=" imageCss-container mb-4">
         {props.movies_list.map((movie) => (
           <div className="" key={movie.id}>

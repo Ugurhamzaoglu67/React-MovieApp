@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./search.css";
-
+import { Link } from 'react-router-dom'
 class Search extends Component {
 
 
@@ -34,12 +34,12 @@ class Search extends Component {
         </div>
       </form>
 
-      <button type="submit" className="btn btn-outline-success btnStyle">
+      <Link to="/add-movie"  type="button" className="btn btn-outline-success btnStyle">
         <span style={{fontSize:'1.5rem'}}>
         <i className="fas fa-plus mr-2"></i>          
           <i className="fas fa-film"></i>
           </span>
-      </button>
+      </Link>
 
       </div>
     );

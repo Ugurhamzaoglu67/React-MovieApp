@@ -19,3 +19,19 @@
     transform: scale(1.1);
     
 }
+
+
+.backtoPage {
+    position:relative;
+    left:5rem;
+    font-size:1.3rem;
+    color:white;
+    background-color:darkblue;
+    padding:.5em 1em;
+    transition: all .4s ease-in-out;
+}
+
+.backtoPage:hover {
+    color:white;
+    font-size:2rem;
+}

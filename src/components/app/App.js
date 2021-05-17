@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+
 } from "react-router-dom";
 
 
@@ -31,6 +32,7 @@ class App extends Component {
 
 
 
+//_________________________________________________________________componentDidMount()__________________________________________________
   async componentDidMount() {
 
        // const result = await axios(`  https://api.themoviedb.org/3/list/7095836?api_key=${process.env.REACT_APP_API}&language=en-US`)
@@ -44,8 +46,9 @@ class App extends Component {
   }
 
 
-  // DELETE ITEM
-  deleteMovie = async  (movie) => {
+//______________________________________________ deleteMovie()____________________________________________________________________________________________________________
+  
+deleteMovie = async  (movie) => {
    // axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
     //axios.post(`https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=${movie.id}
    // `)
@@ -60,14 +63,25 @@ class App extends Component {
   };
 
 
-  // SEARCH MOVIE  (Eventi Parent'ta YAKALADIK, Childe PROPS OLARAK YOlluyoruz)
+//____________________________________________ searchMovies()__________________________________ (Eventi Parent'ta YAKALADIK, Childe PROPS OLARAK YOlluyoruz)
   searchMovies = (e) => {
     this.setState({
       searchValue: e.target.value, // state de  için boş olan searchValue'yi, EVENTIN targetinden gelen value'sini state'deki boş olan searchValue'ye aktarıyoruz.
     });
   };
 
+//____________________________________________ addMovie() _____________________________________
+  addMovie = async (movie) => {
 
+    await axios.post('http://localhost:3004/movies_list', movie)
+
+    this.setState( state => ({
+        movies_list :  state.movies_list.concat([movie])
+    }))
+
+  }
+
+//_________________________________________________________________________ RENDER________________________
   render() {
     let filterMovies = this.state.movies_list.filter((movie) => {
       return (
@@ -84,7 +98,7 @@ class App extends Component {
           <Router>
 
           <Switch>           
-            <Route path="/"  exact >     
+            <Route path="/"  exact  >     
                     <div className="container">
                             <div className="row">
                               <div className="col-md-12">
@@ -98,7 +112,20 @@ class App extends Component {
                     </div>       
                 </Route>   
 
-                <Route path="/add-movie" component={AddMovies} />                 
+                <Route path="/add-movie"  render={({history}) => (
+
+                      <AddMovies  
+                        onAddNewMovie = {(movie) => { 
+                          
+                          this.addMovie(movie) 
+                          history.push('/')
+
+                        } }                       
+                      />
+                )} > 
+
+                
+                </Route>                
           </Switch>
 
           </Router>
