@@ -16,3 +16,9 @@ form .searchSign {
     color:black;
 
 }
+
+
+.btnStyle {
+    position: relative;
+    top: -.7rem;
+}

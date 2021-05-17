@@ -11,6 +11,8 @@ class Search extends Component {
 
   render() {
     return (
+
+      <div className="mb-4 mt-0">
       <form onSubmit={this.formSubmit} className="form-inline w-100 my-4">
         <div className="input-group mb-2 mr-sm-2 w-100">
             
@@ -31,6 +33,15 @@ class Search extends Component {
           </div>
         </div>
       </form>
+
+      <button type="submit" className="btn btn-outline-success btnStyle">
+        <span style={{fontSize:'1.5rem'}}>
+        <i className="fas fa-plus mr-2"></i>          
+          <i className="fas fa-film"></i>
+          </span>
+      </button>
+
+      </div>
     );
   }
 }

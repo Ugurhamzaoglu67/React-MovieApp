@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import Search from "../search/Search.js";
 import Movies from "../movies/Movies";
 import axios from 'axios'
+import AddMovies from '../movies/AddMovies'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+
+
 require('dotenv').config()
 
 
@@ -24,11 +33,12 @@ class App extends Component {
 
   async componentDidMount() {
 
-        const result = await axios(`  https://api.themoviedb.org/3/list/7095836?api_key=${process.env.REACT_APP_API}&language=en-US`)
-        console.log(result.data.items)
+       // const result = await axios(`  https://api.themoviedb.org/3/list/7095836?api_key=${process.env.REACT_APP_API}&language=en-US`)
+        const result = await axios.get('http://localhost:3004/movies_list')
+         console.log(result.data)
 
         this.setState({
-            movies_list : result.data.items
+            movies_list : result.data
         })
 
   }
@@ -36,12 +46,9 @@ class App extends Component {
 
   // DELETE ITEM
   deleteMovie = async  (movie) => {
-
    // axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
-    axios.post(`https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=${movie.id}
-    `)
-
-    console.log("deleted...")
+    //axios.post(`https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=${movie.id}
+   // `)
     const new_movies_list = this.state.movies_list.filter(
       (mv) => mv.id !== movie.id
 
@@ -64,29 +71,38 @@ class App extends Component {
   render() {
     let filterMovies = this.state.movies_list.filter((movie) => {
       return (
-        movie.title
+        movie.name
           .toLowerCase()
           .indexOf(this.state.searchValue.toLowerCase()) !== -1 ||
         movie.overview
           .toLowerCase()
           .indexOf(this.state.searchValue.toLowerCase()) !== -1
       );
-    });
+      });
 
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <Search searchMovie={this.searchMovies} />
-          </div>
-        </div>
+        return (
+          <Router>
 
-        <Movies
-          movies_list={filterMovies}
-          plsDeleteMovie={this.deleteMovie} // PROPS HALİNE GETİRİYORUZ, PARENT'TAKİ FUNCTIONU.
-        />
-      </div>
-    );
+          <Switch>           
+            <Route path="/"  exact >     
+                    <div className="container">
+                            <div className="row">
+                              <div className="col-md-12">
+                                <Search searchMovie={this.searchMovies} />
+                              </div>
+                            </div>
+                        <Movies
+                              movies_list={filterMovies}
+                              plsDeleteMovie={this.deleteMovie} // PROPS HALİNE GETİRİYORUZ, PARENT'TAKİ FUNCTIONU.    
+                        />
+                    </div>       
+                </Route>   
+
+                <Route path="/add-movie" component={AddMovies} />                 
+          </Switch>
+
+          </Router>
+        );
   }
 }
 
