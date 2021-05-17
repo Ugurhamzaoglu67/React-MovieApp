@@ -2,45 +2,39 @@ import React, { Component } from "react";
 import Search from "../search/Search.js";
 import Movies from "../movies/Movies";
 import axios from 'axios'
+require('dotenv').config()
+
+
 
 
 class App extends Component {
   state = {
     movies_list: [],
-
     searchValue: "",
   };
 
-/* 
-  async componentDidMount() {
-    const movie_URL = "http://localhost:3004/movies_list";
-    const res = await fetch(movie_URL);
-    const data = await res.json();
 
-    this.setState({
-      movies_list: data
-    });
-  }*/
 
 
   async componentDidMount() {
 
-        const result = await axios("http://localhost:3004/movies_list")
+        const result = await axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API}&language=en-US&page=1`)
         this.setState({
-            movies_list : result.data
+            movies_list : result.data.results
         })
 
   }
-
 
 
   // DELETE ITEM
   deleteMovie = async  (movie) => {
 
     axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
+
     console.log("deleted...")
     const new_movies_list = this.state.movies_list.filter(
       (mv) => mv.id !== movie.id
+
     );
     this.setState((state) => ({
       //Var olan state'yi güncelliyoruz burda, Yani önceki durumun üzerinden işlem yapıyoruz.
@@ -60,7 +54,7 @@ class App extends Component {
   render() {
     let filterMovies = this.state.movies_list.filter((movie) => {
       return (
-        movie.name
+        movie.title
           .toLowerCase()
           .indexOf(this.state.searchValue.toLowerCase()) !== -1 ||
         movie.overview
