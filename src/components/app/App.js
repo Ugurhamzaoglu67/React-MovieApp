@@ -13,14 +13,22 @@ class App extends Component {
     searchValue: "",
   };
 
+//API -> https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API}&language=en-US&page=1
+
+// API DELETE -> https://api.themoviedb.org/3/list/7095836/remove_item?media_id=23&api_key=6fe8370265c396656c58d7dd9ff3e712
+
+//MY_FILM_LIST DELETE -> https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=761053
+
 
 
 
   async componentDidMount() {
 
-        const result = await axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API}&language=en-US&page=1`)
+        const result = await axios(`  https://api.themoviedb.org/3/list/7095836?api_key=${process.env.REACT_APP_API}&language=en-US`)
+        console.log(result.data.items)
+
         this.setState({
-            movies_list : result.data.results
+            movies_list : result.data.items
         })
 
   }
@@ -29,7 +37,9 @@ class App extends Component {
   // DELETE ITEM
   deleteMovie = async  (movie) => {
 
-    axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
+   // axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
+    axios.post(`https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=${movie.id}
+    `)
 
     console.log("deleted...")
     const new_movies_list = this.state.movies_list.filter(
