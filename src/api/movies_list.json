@@ -8,13 +8,6 @@
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
     },
     {
-      "id": 2,
-      "name": "Grizzly Man",
-      "rating": 6.9,
-      "overview": "Werner Herzog's documentary film about the \"Grizzly Man\" Timothy Treadwell and what the thirteen summers in a National Park in Alaska were like in one man's attempt to protect the grizzly bears. The film is full of unique images and a look into the spirit of a man who sacrificed himself for nature.",
-      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zuZWpcuye25rpsiZ4XzsAvmLDHG.jpg"
-    },
-    {
       "id": 3,
       "name": "Reservoir Dogs",
       "rating": 8.8,
@@ -27,27 +20,6 @@
       "rating": 9.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eX1Yl1h9iVusGiqIrUA3cI16AbA.jpg"
-    },
-    {
-      "name": "Hulk",
-      "imageUrl": "hulk/img.png",
-      "overview": "güzel film",
-      "rating": "6.7",
-      "id": 6
-    },
-    {
-      "name": "Wolverine",
-      "imageUrl": "wolverine.png",
-      "overview": "harika bir film",
-      "rating": "7.8",
-      "id": 7
-    },
-    {
-      "name": "365 days",
-      "imageUrl": "365days.png",
-      "overview": "harikasın film",
-      "rating": "7.8",
-      "id": 8
     }
   ]
 }

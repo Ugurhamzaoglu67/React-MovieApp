@@ -49,7 +49,7 @@ class App extends Component {
 //______________________________________________ deleteMovie()____________________________________________________________________________________________________________
   
 deleteMovie = async  (movie) => {
-   // axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
+    axios.delete(`http://localhost:3004/movies_list/${movie.id}`)
     //axios.post(`https://api.themoviedb.org/3/list/${process.env.REACT_APP_MY_LIST_ID}/remove_item?api_key=${process.env.REACT_APP_API}&session_id=${process.env.REACT_APP_SESSION_ID}&media_id=${movie.id}
    // `)
     const new_movies_list = this.state.movies_list.filter(
