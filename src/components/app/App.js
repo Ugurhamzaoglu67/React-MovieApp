@@ -3,6 +3,7 @@ import Search from "../search/Search.js";
 import Movies from "../movies/Movies";
 import axios from 'axios'
 import AddMovies from '../movies/AddMovies'
+import EditMovie from '../movies/EditMovie'
 import {
   BrowserRouter as Router,
   Switch,
@@ -81,6 +82,7 @@ deleteMovie = async  (movie) => {
 
 //_________________________________________________________________________ RENDER________________________
   render() {
+    
     let filterMovies = this.state.movies_list.filter((movie) => {
       return (
         movie.name
@@ -123,12 +125,12 @@ deleteMovie = async  (movie) => {
 
                         } }                       
                       />
-                )} > 
+                       )} > 
+          
+                </Route>   
 
-                
-                </Route>                
+                <Route path={`/edit-movie/:id`} component={EditMovie} />           
           </Switch>
-
           </Router>
         );
   }

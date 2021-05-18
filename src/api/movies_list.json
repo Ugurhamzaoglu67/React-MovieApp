@@ -5,7 +5,9 @@
       "name": "Fight Club",
       "rating": 7.8,
       "overview": "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
-      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+
+      "vote_count":215.432
     },
     {
       "id": 3,
@@ -13,6 +15,7 @@
       "rating": 8.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AjTtJNumZyUDz33VtMlF1K8JPsE.jpg"
+      ,"vote_count":312.400
     },
     {
       "id": 5,
@@ -20,13 +23,16 @@
       "rating": 9.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eX1Yl1h9iVusGiqIrUA3cI16AbA.jpg"
+     , "vote_count":800.750
+    
     },
     {
       "name": "Joker",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3DeEAwO42j4VmRdI4KSSN1VloM.jpg",
       "overview": "Joker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika film",
       "rating": "8.8",
-      "id": 6
+      "id": 6,
+      "vote_count":780.432
     }
   ]
 }
