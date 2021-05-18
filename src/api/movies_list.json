@@ -20,6 +20,13 @@
       "rating": 9.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eX1Yl1h9iVusGiqIrUA3cI16AbA.jpg"
+    },
+    {
+      "name": "Joker",
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3DeEAwO42j4VmRdI4KSSN1VloM.jpg",
+      "overview": "Joker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika film",
+      "rating": "8.8",
+      "id": 6
     }
   ]
 }

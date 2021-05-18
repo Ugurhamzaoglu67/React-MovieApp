@@ -11,9 +11,7 @@ import {
 } from "react-router-dom";
 
 
-
 require('dotenv').config()
-
 
 
 
@@ -92,7 +90,10 @@ deleteMovie = async  (movie) => {
           .toLowerCase()
           .indexOf(this.state.searchValue.toLowerCase()) !== -1
       );
-      });
+
+      }).sort((x,y) => {
+        return x.id < y.id ? 1 : x.id > y.id ? -1 : 0
+      })
 
         return (
           <Router>

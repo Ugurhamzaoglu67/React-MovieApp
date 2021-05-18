@@ -2,6 +2,16 @@ import React from "react";
 import "./movies.css";
 
 const Movies = (props) => {
+
+
+  const truncateFunc = (str, max_length ) => {
+      if(!str) return null;
+      if(str.length <= max_length) return str;
+      
+      return `${str.substring(0,max_length)}...` 
+  }
+
+
   return (
     <div className=" imageCss-container mb-4">
       {props.movies_list.map((movie, i) => (
@@ -13,9 +23,9 @@ const Movies = (props) => {
               alt="w"
             />
 
-            <div className="card-body" style={{ height: "auto" }}>
+            <div className="card-body py-4" style={{ height: "auto" }}>
                 <h5 className="card-title">{movie.name}</h5>
-                <p className="card-text">{movie.overview}</p>
+                <p className="card-text">{truncateFunc(movie.overview, 75)} <a  href="#" className='mt-2 float-right btn btn-sm btn-primary'>Read More</a></p>
                 <p className="card-text">
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
