@@ -30,19 +30,25 @@ class App extends Component {
 
 
 
-
-//_________________________________________________________________componentDidMount()__________________________________________________
-  async componentDidMount() {
+// DidMount
+  componentDidMount() {
 
        // const result = await axios(`  https://api.themoviedb.org/3/list/7095836?api_key=${process.env.REACT_APP_API}&language=en-US`)
-        const result = await axios.get('http://localhost:3004/movies_list')
-         console.log(result.data)
-
-        this.setState({
-            movies_list : result.data
-        })
-
+   this.getMoviesList()
   }
+
+// GET MOVIES LIST
+  async getMoviesList() {
+    const result = await axios.get('http://localhost:3004/movies_list')
+
+    this.setState({
+      movies_list : result.data
+    })
+  }
+
+
+
+
 
 
 //______________________________________________ deleteMovie()____________________________________________________________________________________________________________
@@ -78,6 +84,7 @@ deleteMovie = async  (movie) => {
         movies_list :  state.movies_list.concat([movie])
     }))
 
+    this.getMoviesList()
   }
 
 //_____________________________________________ editMovie()_____________________________________
@@ -86,7 +93,7 @@ deleteMovie = async  (movie) => {
   editMovie = async (id,updateMovie) => {
 
     await axios.put(`http://localhost:3004/movies_list/${id}`, updateMovie)
-
+    this.getMoviesList() //Yapılan değişikliği hemen getir.
   }
 
 

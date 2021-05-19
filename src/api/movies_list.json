@@ -33,12 +33,20 @@
       "id": 6
     },
     {
-      "name": "Riverdale",
+      "name": "RiverDale  XX",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pHcNHYPg0c2vg7qay6wjJoApUgS.jpg",
       "overview": "Küçük bir kasabada yaşayan sürrealist gençlerin hayatını anlatacaktır. Dışarıdan sakin ve şirin bir kasaba gibi gözüken Riverdale’in iç yüzü oldukça karanlık ve tuhaftır. Bu kasabada yaşananlar dışarıdan gelenler için garip olarak adlandırılabilir ancak içeride yaşayanlar için oldukça sıradandır.\n",
       "rating": "6.7",
-      "vote_count": "540.355",
+      "vote_count": "540.36",
       "id": 7
+    },
+    {
+      "name": "Yırtıcı Kuşlar ve Muhteşem Harley Quinn",
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ZB3EBbF3HHywU7jfcwP8eDnUwn.jpg",
+      "overview": "Joker'den ayrılan Harley Quinn, bir suç lordundan nadir bir elmas çaldıktan sonra üzerine ödül koyulan genç bir kıza yardım etmek için bir şarkıcı, bir suikastçı ve bir polis dedektifiyle güçlerini birleştiriyor.",
+      "rating": "6.8",
+      "vote_count": "600.450",
+      "id": 8
     }
   ]
 }

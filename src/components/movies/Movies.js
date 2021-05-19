@@ -38,7 +38,7 @@ const Movies = (props) => {
 
 
             <div className="card-body py-4" style={{ height: "auto" }}>
-                <h5 className="card-title">{movie.name}</h5>
+                <h5 className="card-title text-center">{movie.name}</h5>
                 <p className="card-text">{truncateFunc(movie.overview, 75)} <a  href="#qw" className='mt-2 float-right btn btn-sm btn-primary'>Read More</a></p>
                 <p className="card-text">
                   <small className="text-muted">Last updated 3 mins ago</small>
