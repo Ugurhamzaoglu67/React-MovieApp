@@ -42,6 +42,13 @@ class AddMovies extends Component {
                     <input type="number" step="0.01"  min="0" max="10" name="rating" className="form-control" id="exampleInputPassword1" />
                 </div>
 
+                
+                <div className="form-group w-25" >
+                    <label htmlFor="exampleInputPassword1">Vote Count</label>
+                    <input type="number" step="0.001"  min="0"  name="vote_count" className="form-control" id="exampleInputPassword1" />
+                </div>
+
+
                 <button 
                     
                     type="submit" 

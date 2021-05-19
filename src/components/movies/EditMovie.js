@@ -31,17 +31,41 @@ class EditMovie extends Component {
             overview: result.data.overview,
             rating : result.data.rating,
             vote_count : result.data.vote_count,
-            id:result.data.id
+            
         })
     }
 
+    inputChange = (e) => {
+        
+        this.setState({
+            [e.target.name] : e.target.value
+        })
 
+    }
 
 
 
 
     formSubmitHandle = (e) => {
         e.preventDefault();
+
+
+        const { name, imageUrl, overview, rating, vote_count } = this.state
+        console.log(this.props.match.params.id)
+
+        const id = this.props.match.params.id
+
+
+        const updateMovie = {
+            name,
+            imageUrl,
+            overview,
+            rating,
+            vote_count
+        }
+
+        this.props.oneditMovie(id, updateMovie) // child'dan ->  parenta props 
+        this.props.history.push('/') // -> res.redirect('/')
 
     } 
 
@@ -55,38 +79,57 @@ class EditMovie extends Component {
             <form className="text-white w-75" onSubmit={ this.formSubmitHandle } style={{margin:'8rem auto'}}>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Name</label>
-                    <input type="text" value={this.state.name}  className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <input type="text" 
+                        value={this.state.name} 
+                        className="form-control" 
+                        name="name" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        onChange={this.inputChange}
+                     
+                     />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Image URL</label>
-                    <input type="text"   value={this.state.imageUrl} className="form-control" name="imageUrl" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <input type="text"   
+                        value={this.state.imageUrl} 
+                        className="form-control" 
+                        name="imageUrl" id="exampleInputEmail1" 
+                        onChange={this.inputChange}
+                        aria-describedby="emailHelp" />
                 </div>
 
 
 
                 <div className="form-group">
                     <label htmlFor="exampleFormControlTextarea1">Overview</label>
-                    <textarea className="form-control" name="overview" id="exampleFormControlTextarea1" rows="3" value={this.state.overview}></textarea>
+                    <textarea className="form-control" 
+                        name="overview" 
+                        onChange={this.inputChange}
+                        id="exampleFormControlTextarea1" rows="3" value={this.state.overview}></textarea>
                 </div>
 
                 <div className="form-group w-25" >
                     <label htmlFor="exampleInputPassword1">Rating</label>
-                    <input type="number" value={this.state.rating} step="0.01"  min="0" max="10" name="rating" className="form-control" id="exampleInputPassword1" />
+                    <input type="number" value={this.state.rating} step="0.01" min="0" max="10"  
+                         onChange={this.inputChange}
+                         name="rating" className="form-control" id="exampleInputPassword1" />
                 </div>
 
                 <div className="form-group w-25" >
                     <label htmlFor="exampleInputPassword1">Vote Count</label>
-                    <input type="number" step="0.01" value={this.state.vote_count}  min="0"  name="vote_count" className="form-control" id="exampleInputPassword1" />
+                    <input type="number" step="0.01" 
+                    value={this.state.vote_count}  min="0"
+                    onChange={this.inputChange}  
+                    name="vote_count" className="form-control" id="exampleInputPassword1" />
                 </div>
 
 
-                <button 
-                    
+                <input 
+                    value=" Edit Movie"
                     type="submit" 
-                    className="btn btn-success">
-                    Edit Movie
-                </button>
+                    className="btn btn-success" />
+                    
+              
 
             </form>
 

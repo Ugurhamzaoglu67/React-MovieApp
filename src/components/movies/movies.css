@@ -2,8 +2,8 @@
 
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(19rem,5fr));
-    grid-row-gap:5px;
-    grid-column-gap:5px;
+    grid-row-gap:2rem;
+    grid-column-gap:10px;
     height:500px;
 }
 

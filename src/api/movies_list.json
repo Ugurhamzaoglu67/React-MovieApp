@@ -6,33 +6,39 @@
       "rating": 7.8,
       "overview": "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
-
-      "vote_count":215.432
+      "vote_count": 215.432
     },
     {
       "id": 3,
       "name": "Reservoir Dogs",
       "rating": 8.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
-      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AjTtJNumZyUDz33VtMlF1K8JPsE.jpg"
-      ,"vote_count":312.400
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AjTtJNumZyUDz33VtMlF1K8JPsE.jpg",
+      "vote_count": 312.4
     },
     {
       "id": 5,
       "name": "Lord Of The Kings",
       "rating": 9.8,
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
-      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eX1Yl1h9iVusGiqIrUA3cI16AbA.jpg"
-     , "vote_count":800.750
-    
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eX1Yl1h9iVusGiqIrUA3cI16AbA.jpg",
+      "vote_count": 800.75
     },
     {
       "name": "Joker",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3DeEAwO42j4VmRdI4KSSN1VloM.jpg",
-      "overview": "Joker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika filmJoker movie lorem ipsum harika film",
-      "rating": "8.8",
-      "id": 6,
-      "vote_count":780.432
+      "overview": "ukarıdaki örnekte fonksiyona geçilen kisi nesne parametresinde destructuring işlemi yapılıyor. 3. satırdaki emailBilgisi fonksiyonuna kisi nesnesi parametre olarak veriliyor. Fonksiyonun parametresi {email} şeklinde olduğundan kisi nesnesinden email özelliğine destructuring işlemi yapılıyor. 9. satırdaki adiVeYasGoster fonksiyonunun parametresi {adi, yas:yasi} şeklinde olduğundan, fonksiyona geçilen kisi nesnesinden adi ve yas özelliklerine destructuring uygulanıyor ve kisi nesnesinde bulunan yas özelliğinin adı yasi olarak değiştiriliyor.",
+      "rating": "10",
+      "vote_count": "800.460",
+      "id": 6
+    },
+    {
+      "name": "Riverdale",
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pHcNHYPg0c2vg7qay6wjJoApUgS.jpg",
+      "overview": "Küçük bir kasabada yaşayan sürrealist gençlerin hayatını anlatacaktır. Dışarıdan sakin ve şirin bir kasaba gibi gözüken Riverdale’in iç yüzü oldukça karanlık ve tuhaftır. Bu kasabada yaşananlar dışarıdan gelenler için garip olarak adlandırılabilir ancak içeride yaşayanlar için oldukça sıradandır.\n",
+      "rating": "6.7",
+      "vote_count": "540.355",
+      "id": 7
     }
   ]
 }

@@ -80,6 +80,17 @@ deleteMovie = async  (movie) => {
 
   }
 
+//_____________________________________________ editMovie()_____________________________________
+
+
+  editMovie = async (id,updateMovie) => {
+
+    await axios.put(`http://localhost:3004/movies_list/${id}`, updateMovie)
+
+  }
+
+
+
 //_________________________________________________________________________ RENDER________________________
   render() {
     
@@ -127,9 +138,21 @@ deleteMovie = async  (movie) => {
                       />
                        )} > 
           
-                </Route>   
+                  </Route>   
 
-                <Route path={`/edit-movie/:id`} component={EditMovie} />           
+                  <Route path="/edit-movie/:id"  render={(props) => (
+
+                            <EditMovie  
+
+                              {...props}
+                              oneditMovie = {(id, movie) => {                              
+                                this.editMovie(id,movie) 
+                              
+                                  } }                       
+                                />
+                          )} > 
+                  </Route>  
+        
           </Switch>
           </Router>
         );
