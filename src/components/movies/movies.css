@@ -7,7 +7,7 @@
     height:500px;
 }
 
-.imageCss-container img {
+.imageCss-container .myimg {
    
     border:3px solid #adb5bd;
     border-radius: 5px;
@@ -15,11 +15,16 @@
     transition: 0.5s all ease-in-out;
 }
 
-.imageCss-container img:hover {
+.imageCss-container .myimg:hover {
     transform: scale(1.1);
     
 }
 
+
+.textStyle {
+    font-size:1.5rem;
+    font-weight: bolder;
+}
 
 
 

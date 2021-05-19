@@ -21,7 +21,7 @@ const Movies = (props) => {
 
         <div className="" key={i}>
           <div className="card ">
-            <img className="card-img-top" src={movie.imageUrl}
+            <img className="card-img-top myimg" src={movie.imageUrl}
               /* src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}*/
               alt="w"
             />
@@ -39,7 +39,19 @@ const Movies = (props) => {
 
             <div className="card-body py-4" style={{ height: "auto" }}>
                 <h5 className="card-title text-center">{movie.name}</h5>
-                <p className="card-text">{truncateFunc(movie.overview, 75)} <a  href="#qw" className='mt-2 float-right btn btn-sm btn-primary'>Read More</a></p>
+                <p className="card-text">{truncateFunc(movie.overview, 75)} 
+                
+                
+                  <Link 
+                    type="button" 
+                    className='mt-2 float-right btn btn-sm btn-primary'
+                    to={`/movie-detail/${movie.id}`}
+                  >
+                  
+                      Read More
+                </Link>
+                  
+                </p>
                 <p className="card-text">
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>

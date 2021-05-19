@@ -4,12 +4,14 @@ import Movies from "../movies/Movies";
 import axios from 'axios'
 import AddMovies from '../movies/AddMovies'
 import EditMovie from '../movies/EditMovie'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 
 } from "react-router-dom";
+import DetailMovie from "../movies/DetailMovie.js";
 
 
 require('dotenv').config()
@@ -89,13 +91,16 @@ deleteMovie = async  (movie) => {
 
 //_____________________________________________ editMovie()_____________________________________
 
-
   editMovie = async (id,updateMovie) => {
 
     await axios.put(`http://localhost:3004/movies_list/${id}`, updateMovie)
     this.getMoviesList() //Yapılan değişikliği hemen getir.
   }
 
+  getDetailMovie = async(id, movie) => {
+      await axios.get(`http://localhost:3004/movies_list/${id}`, movie)
+    console.log("detail")
+  }
 
 
 //_________________________________________________________________________ RENDER________________________
@@ -131,7 +136,7 @@ deleteMovie = async  (movie) => {
                               plsDeleteMovie={this.deleteMovie} // PROPS HALİNE GETİRİYORUZ, PARENT'TAKİ FUNCTIONU.    
                         />
                     </div>       
-                </Route>   
+              </Route>   
 
                 <Route path="/add-movie"  render={({history}) => (
 
@@ -159,6 +164,21 @@ deleteMovie = async  (movie) => {
                                 />
                           )} > 
                   </Route>  
+
+                  <Route path="/movie-detail/:id"  render={(props) => (
+
+                      <DetailMovie
+                        {...props}
+                        getDetailMovie = {(id, movie) => {
+                          this.getDetailMovie(id, movie)
+                        }}
+                      
+                      />
+
+
+                  )}  >
+
+              </Route>  
         
           </Switch>
           </Router>
